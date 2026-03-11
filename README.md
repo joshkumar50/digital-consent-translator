@@ -4,6 +4,23 @@
 
 **Privacy Guardian** is a privacy-first browser extension designed to protect users from the overwhelming complexity of digital consent forms and Terms of Service (ToS). It uses local AI to "translate" long, legalese-heavy documents into concise, actionable summaries instantly.
 
+## 🎯 The Problem
+Modern websites use long legal documents designed to be difficult to read. Typical ToS pages contain:
+- **Thousands of words** of dense text.
+- **Complex legal terminology** that confuses users.
+- **Hidden clauses** about data usage and rights.
+
+Because of this, most users click **"Accept"** without reading, unknowingly giving away their personal data or rights.
+
+## 💡 The Solution
+Privacy Guardian levels the playing field by automatically:
+1.  **Detecting** legal text on any webpage.
+2.  **Extracting** only the relevant, high-impact content.
+3.  **Processing** it through a local, private AI model.
+4.  **Displaying** a simple, risk-categorized summary inside your browser.
+
+Users get a clear, honest explanation *before* accepting any agreement.
+
 ## 🌟 Why this project?
 Digital consent forms are intentionally long and difficult to read. Most users skip them entirely, unknowingly giving away their data or rights. **Privacy Guardian** levels the playing field by providing:
 - **Instant Understanding**: No more reading 50 pages of legal text.
