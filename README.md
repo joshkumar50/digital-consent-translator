@@ -19,6 +19,11 @@ Privacy Guardian levels the playing field by automatically:
 
 Users get a clear, honest explanation *before* accepting any agreement.
 
+## 🎬 Project Demo
+![Privacy Guardian Demo](screenshots/demo-privacy.gif)
+
+**Watch the full demo here:** [Google Drive Video](https://drive.google.com/file/d/1uhOhf1gTUGeEh3Z32sqO9v_MrJDzj9wp/view?usp=sharing)
+
 ## 🌟 Why this project?
 Digital consent forms are intentionally long and difficult to read. Most users skip them entirely, unknowingly giving away their data or rights. **Privacy Guardian** levels the playing field by providing:
 - **Instant Understanding**: No more reading 50 pages of legal text.
