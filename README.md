@@ -20,7 +20,9 @@ Privacy Guardian levels the playing field by automatically:
 Users get a clear, honest explanation *before* accepting any agreement.
 
 ## 🎬 Project Demo
-![Privacy Guardian Demo](screenshots/demo-privacy.gif)
+<p align="center">
+  <img src="screenshots/demo-privacy.gif" width="750" alt="Privacy Guardian Demo">
+</p>
 
 **Watch the full demo here:** [Google Drive Video](https://drive.google.com/file/d/1uhOhf1gTUGeEh3Z32sqO9v_MrJDzj9wp/view?usp=sharing)
 
