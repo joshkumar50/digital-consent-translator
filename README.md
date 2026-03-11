@@ -1,5 +1,7 @@
 # 🛡️ Privacy Guardian (Digital Consent Translator)
 
+![Privacy Guardian Popup](screenshots/popup_preview.png)
+
 **Privacy Guardian** is a privacy-first browser extension designed to protect users from the overwhelming complexity of digital consent forms and Terms of Service (ToS). It uses local AI to "translate" long, legalese-heavy documents into concise, actionable summaries instantly.
 
 ## 🌟 Why this project?
