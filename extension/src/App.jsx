@@ -3,32 +3,48 @@ import './App.css'; // This connects our component to the stylesheet
 
 // A new component to smartly display the summary as a color-coded list
 const SummaryDisplay = ({ summary }) => {
-  // Split the summary string into an array of lines, looking for '*' as the bullet point
-  const lines = summary.split('\n').filter(line => line.trim().startsWith('*'));
+  // Split the summary into lines and filter for content
+  const lines = summary.split('\n').filter(line => line.trim().length > 0);
+
+  // Helper to check if a line is a header (Bolded or starts with *)
+  const isHeader = (line) => {
+    const trimmed = line.trim();
+    return (trimmed.startsWith('**') && trimmed.endsWith('**')) || 
+           (trimmed.startsWith('*') && trimmed.endsWith('*') && !trimmed.startsWith('* '));
+  };
 
   // Function to determine the CSS class based on risk labels
   const getRiskClass = (line) => {
-    if (line.toLowerCase().includes('(high risk)')) return 'risk-high';
-    if (line.toLowerCase().includes('(medium risk)')) return 'risk-medium';
-    if (line.toLowerCase().includes('(low risk)')) return 'risk-low';
+    const l = line.toLowerCase();
+    if (l.includes('(high risk)') || l.includes('high risk:')) return 'risk-high';
+    if (l.includes('(medium risk)') || l.includes('medium risk:')) return 'risk-medium';
+    if (l.includes('(low risk)') || l.includes('low risk:')) return 'risk-low';
     return '';
   };
 
-  // If for some reason the AI doesn't return bullet points, show the raw text
-  if (lines.length === 0) {
-    return <p className="loading-text">{summary}</p>;
-  }
+  // Clean the text of common Markdown artifacts
+  const cleanText = (text) => {
+    return text
+      .replace(/^\*+/, '') // Remove leading stars
+      .replace(/\*+$/, '') // Remove trailing stars
+      .replace(/^\s*-\s+/, '') // Remove leading dashes
+      .replace(/\((high|medium|low)\srisk\)/i, '') // Remove risk labels
+      .trim();
+  };
 
   return (
     <div className="summary-container">
-      <ul>
-        {lines.map((line, index) => (
-          <li key={index} className={getRiskClass(line)}>
-            {/* Remove the bullet point and risk label for a cleaner look */}
-            {line.replace(/^\*\s*/, '').replace(/\((high|medium|low)\srisk\)/i, '').trim()}
-          </li>
-        ))}
-      </ul>
+      {lines.map((line, index) => {
+        const header = isHeader(line);
+        return (
+          <div 
+            key={index} 
+            className={`summary-item ${header ? 'summary-header' : 'summary-point'} ${getRiskClass(line)}`}
+          >
+            {cleanText(line)}
+          </div>
+        );
+      })}
     </div>
   );
 };

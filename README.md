@@ -35,11 +35,31 @@ graph LR
     end
 ```
 
+## 🖼️ Preview
+| Initial Page | AI-Powered Summary (Facebook ToS) |
+| :---: | :---: |
+| ![Start Screen](screenshots/popup_preview.png) | ![Facebook Summary](screenshots/facebook_summary.png) |
+
 ---
 
-## 🛠️ Setup Instructions
+## 🏗️ Architecture & Production Vision
 
-### 1. Prerequisites
+### 🛠️ Current Development Setup (Local AI)
+Currently, **Privacy Guardian** is configured for **local testing and development**. 
+- **Backend**: Python (Flask) running on `localhost`.
+- **AI Engine**: Ollama running locally.
+- **Why?**: This allows for free, private, and rapid iteration without relying on expensive cloud APIs during the build phase.
+
+### 🌐 Future Production Release (Market Ready)
+When released to the public market, the extension will transition to a **Cloud-Backend Architecture**:
+1.  **Plug-and-Play**: Users will simply install the extension from the Chrome/Edge Web Store.
+2.  **No Local Setup**: Users will **not** need to install Ollama or Python.
+3.  **Scalable API**: The extension will communicate with a secure, centralized cloud server (e.g., hosted on AWS/GCP) that runs the AI models.
+4.  **Privacy Priority**: Even in production, the backend will be designed to process text anonymously, ensuring user data remains protected while providing instant summaries.
+
+---
+
+## 🛠️ Setup Instructions (For Developers)
 - **Ollama**: [Download and install](https://ollama.com/)
 - **Node.js**: [Download and install](https://nodejs.org/)
 - **Python 3**: [Download and install](https://www.python.org/)
